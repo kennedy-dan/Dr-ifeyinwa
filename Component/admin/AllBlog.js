@@ -66,7 +66,7 @@ const AllBlog = () => {
 
     return (
         <Container maxWidth='md'>
-            <p>All Users</p>
+            <p>All Blogs</p>
       <TableContainer component={Paper}>
         <Table className={classes.tit}>
           <TableHead>
@@ -74,16 +74,16 @@ const AllBlog = () => {
               <TableCell><p>blog ID</p></TableCell>
               <TableCell><p>Title</p></TableCell>
               <TableCell><p>Description</p></TableCell>
-              <TableCell><p>delete User</p></TableCell>
+              <TableCell><p>delete Blog</p></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {posts &&
               posts.map((post) => (
                 <TableRow>
-                  <TableCell>{post._id}</TableCell>
-                  <TableCell>{post.title}</TableCell>
-                  <TableCell>{post.description}</TableCell>
+                  <TableCell><p>{post._id}</p></TableCell>
+                  <TableCell><p>{post.title}</p></TableCell>
+                  <TableCell><p>{post.description}</p></TableCell>
                   <TableCell><DeleteIcon onClick={() => deleteBlogHandler(post._id)}/></TableCell>
                 </TableRow>
               ))}

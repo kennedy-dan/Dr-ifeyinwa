@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Card } from "@material-ui/core";
+import { Grid, makeStyles, Card, useTheme, useMediaQuery } from "@material-ui/core";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import Link from "next/link";
 const useStyles = makeStyles((theme) => ({
   Card:{
     boxShadow: "0px 9px 15px black",
+    marginBottom: '16px'
   },
   aTag: {
     textDecoration: "none",
@@ -28,10 +29,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 const CoursesItem = ({ cours }) => {
   const classes = useStyles();
+  const theme = useTheme()
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
   const dateCreated = new Date(cours.createdAt).toLocaleString("en-US");
   return (
     <>
-      <Grid item xs={4}>
+      <Grid item xs={matchesXS? '' : 4}>
         <Card className={classes.Card}>
           <p className={classes.dateCreated}>{dateCreated}</p>
 

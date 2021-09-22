@@ -3,7 +3,7 @@ import Spinner from "../UI/spinner";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getBlogPost } from "../../redux/actions/blogActions";
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles, useTheme, useMediaQuery } from "@material-ui/core";
 import BlogItem from "./BlogItem";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,13 +11,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "41px",
     alignSelf: "center",
   },
-  
+  mainGrid:{
+    width:'90%'
+  }
 }));
 
 const BlogPosts = () => {
   const classes = useStyles();
+  const theme = useTheme()
   const dispatch = useDispatch();
   const { posts, loading } = useSelector((state) => state.getBlog);
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
 
   useEffect(() => {
     dispatch(getBlogPost());
@@ -32,7 +37,7 @@ const BlogPosts = () => {
       ) : (
         <Grid container direction="column" alignItems='center' justifyContent="center">
           <h3 className={classes.BlogTitle}>The Blog</h3>
-          <Grid container direction="row" spacing={4} style={{width: "90%"}}>
+          <Grid container direction={matchesXS? 'column': 'row'} alignItems={matchesXS? 'center': ""} spacing={matchesXS? '': 4} className={classes.mainGrid}>
             {posts && posts.map((post) => <BlogItem post={post} />)}
           </Grid>
         </Grid>

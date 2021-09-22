@@ -9,15 +9,14 @@ import React from "react";
 import firstbg from "../../public/images/car.svg";
 import Image from "next/image";
 import { jsPDF } from "jspdf";
-import Link from 'next/link'
+import Link from "next/link";
 // import cv from '../../public/images/IfyCv.pdf'
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
+import DownloadForOfflineIcon from "@material-ui/icons/ArrowDownwardRounded";
 
-const FileViewer = dynamic(() => import('react-file-viewer'), {
-    ssr: false
+const FileViewer = dynamic(() => import("react-file-viewer"), {
+  ssr: false,
 });
-
-
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -66,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     borderRadius: 90,
     boxShadow: "0px 9px 15px black",
+    "&:hover": {
+      backgroundColor: "#96dcfa",
+      boxShadow: "0px 9px 15px black",
+    },
   },
 }));
 
@@ -83,11 +86,9 @@ export const Cards = (props) => {
     { title: "homomorphism", id: "8" },
   ];
 
-  const pth =  <FileViewer fileType="pdf" filePath="../../public/images/IfyCv.pdf" />
-
-
- 
-
+  const pth = (
+    <FileViewer fileType="pdf" filePath="../../public/images/IfyCv.pdf" />
+  );
 
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
@@ -126,18 +127,16 @@ export const Cards = (props) => {
         direction="row"
         justifyContent={matchesXS ? "center" : "flex-start"}
       >
-        <Button variant="contained" className={classes.btn}>
         <Link
-                    href={'/pdf/IfyCv.pdf'}
-                    target="_blank"
-                    // class="butn butn-bg mt-30"
-                    download
-                  >
-                    <span>Download my C.V</span>
-                  </Link>
-        </Button>
-
-   
+          href={"/pdf/IfyCv.pdf"}
+          target="_blank"
+          // class="butn butn-bg mt-30"
+          download
+        >
+          <Button variant="contained" className={classes.btn}>
+            <DownloadForOfflineIcon /> Download my C.V
+          </Button>
+        </Link>
       </Grid>
     </Grid>
   );

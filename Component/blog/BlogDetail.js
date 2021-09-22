@@ -13,29 +13,23 @@ const useStyles = makeStyles((theme) => ({
   Title: {
     fontSize: "40px",
     fontWeight: "bold",
+    [theme.breakpoints.down('xs')]:{
+      fontSize: '25px',
+      textAlign:"center"
+    }
   },
   description: {
     fontSize: "25px",
     width: "80%",
-    textAlign: "center",
+    textAlign:"center",
+
+    [theme.breakpoints.down('xs')]:{
+      fontSize: '20px',
+      textAlign:"center"
+    }
   },
 
   post: {
-    fontSize: "22px",
-    width: "50%",
-    marginTop: "18px",
-  },
-  post1: {
-    fontSize: "22px",
-    width: "50%",
-    marginTop: "18px",
-  },
-  post2: {
-    fontSize: "22px",
-    width: "50%",
-    marginTop: "18px",
-  },
-  post3: {
     fontSize: "22px",
     width: "50%",
     marginTop: "18px",

@@ -5,7 +5,7 @@ import validator from "validator";
 const messageSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: [true,  "Please enter your name"]
   
   },
   email: {
@@ -15,7 +15,7 @@ const messageSchema = new mongoose.Schema({
   },
   message: {
     type: String,
-    required: true
+    required:[ true,  "Please enter a message"]
   },
  
   createdAt: {

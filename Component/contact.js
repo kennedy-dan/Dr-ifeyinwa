@@ -96,6 +96,11 @@ const useStyles = makeStyles((theme) => ({
       margin: "0 auto",
       marginTop: "10px",
     },
+    "&:hover": {
+      backgroundColor: "#96dcfa",
+      boxShadow: "0px 9px 15px black",
+    
+    },
   },
   btnMsg: {
     width: "130px",
@@ -111,6 +116,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       margin: "0 auto",
       marginTop: "10px",
+    },
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.main,
+      boxShadow: "0px 9px 15px black",
+    
     },
   },
   mailIcon:{
@@ -238,7 +248,7 @@ const Contact = (props) => {
           >
             <PanTool className={classes.mailIcon}/>Say Hi
           </Button>
-          <Link href='mailto:kenidankid1998@gmail.com'>
+          <Link href='mailto:ifeyinwadaniel@yahoo.com'>
           <Button
             color="secondary"
             variant="contained"

@@ -192,7 +192,7 @@ const NewBlog = () => {
           </Grid>
         </CardContent>
         <CardActions>
-          <Button size="small" onClick={() => onSaveHandler(editorInstance)}>
+          <Button size="small" onClick={() => onSaveHandler(editorInstance)} color="secondary" variant='contained'>
             Create Blog
           </Button>
         </CardActions>

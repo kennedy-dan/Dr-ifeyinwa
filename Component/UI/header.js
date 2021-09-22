@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       display: "block",
-      marginLeft: "5px",
+      marginLeft: "2em",
     },
 
     color: theme.palette.secondary.main,
@@ -63,10 +63,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     cursor: "pointer",
     [theme.breakpoints.down("xs")]: {
-      marginLeft: "1px",
+      marginLeft: "2em",
     },
     color: theme.palette.secondary.main,
-    marginLeft: "1em",
+    marginLeft: "3em",
     fontSize: "18px",
   },
   appBar: {
@@ -222,10 +222,17 @@ export default function Header() {
     threshold: 150,
   });
   useEffect(() => {
-    // if (!user) {
+    if (window.location.pathname === "/" && value !== 0) {
+      setValue(0);
+    } else if (window.location.pathname === "/blogs" && value !== 1) {
+      setValue(1);
+    } else if (window.location.pathname === "/courses" && value !== 2) {
+      setValue(2);
+    }
+    if (!user) {
       dispatch(loadUser());
-    // }
-  }, [dispatch]);
+    }
+  }, [dispatch, user, ]);
 
   const logoutHandler = () => {
     signOut();
@@ -307,6 +314,11 @@ export default function Header() {
                     <MenuItem>
                       <Link href="/blogs/NewBlog">
                         <p>Create Blog</p>
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link href="/admin/messages">
+                        <p>My Messages</p>
                       </Link>
                     </MenuItem>
                   </Select>
@@ -473,6 +485,16 @@ export default function Header() {
                           </Link>
                         </ListItem>
                         <ListItem button onClick={() => setOpendrawer(false)}>
+                          <Link href="/admin/messages">
+                            <ListItemText
+                              disableTypography
+                              className={classes.drawerList}
+                            >
+                              My Messages{" "}
+                            </ListItemText>
+                          </Link>
+                        </ListItem>
+                        <ListItem button onClick={() => setOpendrawer(false)}>
                           <ListItemText
                             disableTypography
                             className={classes.drawerList}
@@ -504,14 +526,14 @@ export default function Header() {
                   </>
                 ) : (
                   <>
-                     <Link href="/login">
-                  <ListItemText
-                    disableTypography
-                    className={classes.drawerList}
-                  >
-                    Log in
-                  </ListItemText>
-                </Link>
+                    <Link href="/login">
+                      <ListItemText
+                        disableTypography
+                        className={classes.drawerList}
+                      >
+                        Log in
+                      </ListItemText>
+                    </Link>
                   </>
                 )}
               </Grid>

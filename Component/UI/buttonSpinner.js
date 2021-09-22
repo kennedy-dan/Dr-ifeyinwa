@@ -5,7 +5,7 @@ const BtnSpinner = () => {
     let [color, setColor] = useState("#197519");
 
     return (
-        <CircleLoader color={color} size={60}/>
+        <CircleLoader color={color} size={20}/>
     )
 }
 

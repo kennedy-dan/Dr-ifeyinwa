@@ -1,4 +1,5 @@
 import CourseDetail from "../../Component/courses/CourseDetail";
+import { getSession } from "next-auth/client";
 
 
 
@@ -16,6 +17,18 @@ const RoomDetailsPage = () => {
 
 
 export const getServerSideProps = wrapper.getServerSideProps(store => async ({ req, params }) => {
+
+  const session = await getSession({ req })
+
+  if (!session ) {
+      return {
+          redirect: {
+              destination: '/login',
+              permanent: false
+          }
+      }
+  }
+
     await store.dispatch(getSingleCourse(req, params.id))
 })
 

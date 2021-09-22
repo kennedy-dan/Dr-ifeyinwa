@@ -72,10 +72,10 @@ const Messages = () => {
     {messages &&
       messages.map((post) => (
         <TableRow>
-          <TableCell>{post._id}</TableCell>
-          <TableCell>{post.name}</TableCell>
-          <TableCell>{post.email}</TableCell>
-          <TableCell>{post.message}</TableCell>
+          <TableCell><p>{post._id}</p></TableCell>
+          <TableCell><p>{post.name}</p></TableCell>
+          <TableCell><p>{post.email}</p></TableCell>
+          <TableCell><p>{post.message}</p></TableCell>
 
           <TableCell><DeleteIcon onClick={() => deleteMsgHandler(post._id)}/></TableCell>
         </TableRow>

@@ -66,7 +66,7 @@ const AllBlog = () => {
 
     return (
         <Container maxWidth='md'>
-            <p>All Users</p>
+            <p>All Courses</p>
       <TableContainer component={Paper}>
         <Table className={classes.tit}>
           <TableHead>
@@ -74,7 +74,7 @@ const AllBlog = () => {
               <TableCell><p>Course ID</p></TableCell>
               <TableCell><p>Course Code</p></TableCell>
               <TableCell><p>Title</p></TableCell>
-              <TableCell><p>delete User</p></TableCell>
+              <TableCell><p>delete Course</p></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

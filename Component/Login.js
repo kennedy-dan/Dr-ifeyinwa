@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { signIn } from "next-auth/client";
 import { toast } from "react-toastify";
+import BtnSpinner from "./UI/buttonSpinner";
 
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Container from "@material-ui/core/Container";
@@ -45,10 +46,12 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    // setLoading(true);
+    setLoading(true);
 
     const result = await signIn("credentials", {
       redirect: false,
@@ -58,7 +61,7 @@ const Login = () => {
 
     console.log(result);
 
-    // setLoading(false);
+    setLoading(false);
 
     if (result.error) {
       toast.error(result.error);
@@ -118,8 +121,9 @@ const Login = () => {
             variant="contained"
             color="secondary"
             className={classes.submit}
+            disabled={loading ? true : false}
           >
-            Sign In
+                            {loading ? <BtnSpinner /> : 'LOGIN'}
           </Button>
           <Grid container>
             <Grid item>

@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Container from "@material-ui/core/Container";
 import { registerUser, clearErrors } from "../redux/actions/userActions";
-
+import BtnSpinner from './UI/buttonSpinner'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -114,7 +114,7 @@ const Register = () => {
         </Typography>
 
         <ValidatorForm className={classes.form} onSubmit={submitHandler}>
-        <TextValidator
+          <TextValidator
             variant="outlined"
             margin="normal"
             required
@@ -127,7 +127,7 @@ const Register = () => {
             autoComplete="name"
             validators={["required"]}
             errorMessages={["this field is required"]}
-            style={{borderColor: 'red'}}
+            style={{ borderColor: "red" }}
           />
           <TextValidator
             variant="outlined"
@@ -143,7 +143,7 @@ const Register = () => {
             autoFocus
             validators={["required", "isEmail"]}
             errorMessages={["this field is required"]}
-            style={{backgroundColor:'white'}}
+            style={{ backgroundColor: "white" }}
           />
           <TextValidator
             variant="outlined"
@@ -160,14 +160,11 @@ const Register = () => {
             validators={["required"]}
             errorMessages={["this field is required"]}
           />
-                <div className="form-group">
+          <div className="form-group">
             <label htmlFor="avatar_upload">Avatar</label>
             <div className="d-flex align-items-center">
               <div>
-                  <Avatar
-                    src={avatarPreview}
-                    alt="image"
-                  />
+                <Avatar src={avatarPreview} alt="image" />
               </div>
               <div className="custom-file">
                 <input
@@ -191,11 +188,10 @@ const Register = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            disabled={loading ? true : false}
           >
-            Register
+            {loading ? <BtnSpinner /> : "REGISTER"}
           </Button>
-
-   
         </ValidatorForm>
       </div>
     </Container>

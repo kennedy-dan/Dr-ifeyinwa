@@ -6,10 +6,9 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
-  Container
+  Container,
 } from "@material-ui/core";
 import profilePicture from "../public/images/mom.png";
-// import bg from "../public/images/herobg.png";
 import bg from "../public/images/herobg2.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
       height: "120vh",
     },
     [theme.breakpoints.down("xs")]: {
-      // marginTop:'-90px',
 
       height: "170vh",
     },
@@ -91,12 +89,7 @@ const HeroBlock = (props) => {
       spacing={0}
       className={classes.heroGrid}
     >
-      <Image
-        src={bg}
-        alt="mrs Daniel image"
-        layout="fill"
-        objectFit="cover"
-      />
+      <Image src={bg} alt="mrs Daniel image" layout="fill" objectFit="cover" />
       <Grid item>
         <Image
           src={profilePicture}
@@ -112,18 +105,16 @@ const HeroBlock = (props) => {
         {matchesXS ? (
           <Container>
             <p className={classes.detail}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem
-              ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor
-              sit amet, consectetur adipiscing elit, adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit,
+              I am Dr Ifeyinwa Daniel, with so many years of research in
+              Mathematics. I have a desire to excel and continously improve my
+              work. Learn more about me and my journey below
             </p>
           </Container>
         ) : (
           <p className={classes.detail}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum
-            dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit
-            amet, consectetur adipiscing elit, adipiscing elitLorem ipsum dolor
-            sit amet, consectetur adipiscing elit,
+            I am Dr Ifeyinwa Daniel, with so many years of research in
+            Mathematics. I have a desire to excel and continously improve my
+            work. Learn more about me and my journey below
           </p>
         )}
       </Grid>

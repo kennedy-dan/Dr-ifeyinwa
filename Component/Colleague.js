@@ -1,10 +1,17 @@
-import { Grid, Typography, makeStyles ,useTheme, useMediaQuery, Container} from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Container,
+} from "@material-ui/core";
 import React from "react";
 import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
-  colleagueGrid:{
-    backgroundColor: theme.palette.primary.main
+  colleagueGrid: {
+    backgroundColor: theme.palette.primary.main,
   },
   img: {
     width: "180px",
@@ -12,17 +19,16 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 1px 8px rgba(0, 0, 0, 0.2)",
     borderRadius: "50%",
     overflow: "hidden",
-    
-    [theme.breakpoints.down("xs")]: {
-         margin: "auto",
 
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
     },
   },
   colleague: {
     fontSize: "44px",
     fontWeight: "bold",
     marginBottom: "30px",
-    paddingTop:'100px',
+    paddingTop: "100px",
     [theme.breakpoints.down("md")]: {
       fontSize: "40px",
     },
@@ -31,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "35px",
-      textAlign:'center'
+      textAlign: "center",
     },
   },
   colleagueName: {
@@ -39,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10px",
     fontWeight: "bold",
     [theme.breakpoints.down("xs")]: {
-      textAlign:'center'
+      textAlign: "center",
     },
   },
   colleagueTitle: {
@@ -47,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     opacity: 1,
     color: "black",
     [theme.breakpoints.down("xs")]: {
-      textAlign:'center'
+      textAlign: "center",
     },
   },
   colleagueReview: {
@@ -63,66 +69,86 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "center",
     },
   },
-  colleagueReviewGrid:{
+  colleagueReviewGrid: {
     width: "60%",
     [theme.breakpoints.down("xs")]: {
-      width:'100%'
+      width: "100%",
     },
-  }
+  },
 }));
 
- const Colleague = (props) => {
+const Colleague = (props) => {
   const classes = useStyles();
-  const theme = useTheme()
+  const theme = useTheme();
 
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Grid container directon="column" style={{ marginTop: "180px" }} className={classes.colleagueGrid}>
-      <Grid item container direction="row" xs={matchesXS ? 12 : 6} justifyContent="center">
-        <p className={classes.colleague}>
-          On Working With Me
-        </p>
+    <Grid
+      container
+      directon="column"
+      style={{ marginTop: "180px" }}
+      className={classes.colleagueGrid}
+    >
+      <Grid
+        item
+        container
+        direction="row"
+        xs={matchesXS ? 12 : 6}
+        justifyContent="center"
+      >
+        <p className={classes.colleague}>On Working With Me</p>
       </Grid>
-      <Grid container directon="row" justifyContent="space-evenly" style={{paddingBottom:'100px'}}>
+      <Grid
+        container
+        directon="row"
+        justifyContent="space-evenly"
+        style={{ paddingBottom: "100px" }}
+      >
         <Grid item>
           <div className={classes.img}>
             <Image
-              src="/images/max1.jpg"
+              src="/images/ogun.png"
               alt="Mrs Daniel Image"
               width={300}
               height={300}
             />
           </div>
-          <p className={classes.colleagueName}>Lorem Ipsum</p>
-          <p className={classes.colleagueTitle}>Lorem ipsum dolor sit amet</p>
+          <p className={classes.colleagueName}>Dr O. J. Ogunsola.</p>
+          <p className={classes.colleagueTitle}>Lecturer at FUNAAB</p>
         </Grid>
-        <Grid item style={{  }} className={classes.colleagueReviewGrid}>
-          {matchesXS? <Container> <p className={classes.colleagueReview}>
-            {" "}
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. adipiscing elitLorem ipsum dolor sit amet, consectetur
-            adipiscing elit.adipiscing elitLorem ipsum dolor sit amet,
-            consectetur adipiscing elit."{" "}
-          </p></Container>:  <p className={classes.colleagueReview}>
-            {" "}
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. adipiscing elitLorem ipsum dolor sit amet, consectetur
-            adipiscing elit.adipiscing elitLorem ipsum dolor sit amet,
-            consectetur adipiscing elit."{" "}
-          </p>}
-         
+        <Grid item style={{}} className={classes.colleagueReviewGrid}>
+          {matchesXS ? (
+            <Container>
+              {" "}
+              <p className={classes.colleagueReview}>
+                {" "}
+                " Mrs Daniel has a very high sense of creativity and vision to
+                achieve her goals in academic research, learning and teaching.
+                Academically, she can be rated very high. Her oral and written
+                expression in English Language is excellent, an attribute which
+                has made her very commendable and consistent with the academic
+                environment. She is intellectually endowed, direct and affable.
+                She is also emotionally and physically stable and is a woman of
+                high moral virtue."{" "}
+              </p>
+            </Container>
+          ) : (
+            <p className={classes.colleagueReview}>
+              {" "}
+              " Mrs Daniel has a very high sense of creativity and vision to
+              achieve her goals in academic research, learning and teaching.
+              Academically, she can be rated very high. Her oral and written
+              expression in English Language is excellent, an attribute which
+              has made her very commendable and consistent with the academic
+              environment. She is intellectually endowed, direct and affable.
+              She is also emotionally and physically stable and is a woman of
+              high moral virtue."{" "}
+            </p>
+          )}
         </Grid>
       </Grid>
     </Grid>
   );
 };
-export default Colleague
+export default Colleague;
