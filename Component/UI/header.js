@@ -129,6 +129,7 @@ const useStyles = makeStyles((theme) => ({
     // padding: "7px 20px ",
     borderRadius: "5px",
     height: "50%",
+    cursor:"pointer",
 
     "&:hover": {
       boxShadow: "none",
@@ -166,6 +167,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     boxShadow: "none",
     borderRadius: "0px",
+    cursor:'pointer',
     "&:hover": {
       boxShadow: "0px",
     },
@@ -232,7 +234,7 @@ export default function Header() {
     if (!user) {
       dispatch(loadUser());
     }
-  }, [dispatch, user, ]);
+  }, [dispatch, user]);
 
   const logoutHandler = () => {
     signOut();
@@ -514,15 +516,16 @@ export default function Header() {
                         />
                       </Grid>
                     )}
-
-                    <Button
-                      onClick={logoutHandler}
-                      className={classes.btn}
-                      variant="contained"
-                      color="secondary"
-                    >
-                      Log Out
-                    </Button>
+                    <ListItem onClick={() => setOpendrawer(false)}>
+                      <ListItemText
+                        onClick={logoutHandler}
+                        className={classes.btn}
+                        variant="contained"
+                        color="secondary"
+                      >
+                        Log Out
+                      </ListItemText>
+                    </ListItem>
                   </>
                 ) : (
                   <>
@@ -530,6 +533,7 @@ export default function Header() {
                       <ListItemText
                         disableTypography
                         className={classes.drawerList}
+                        onClick={() => setOpendrawer(false)}
                       >
                         Log in
                       </ListItemText>

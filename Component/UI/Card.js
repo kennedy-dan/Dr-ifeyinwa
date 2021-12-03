@@ -87,7 +87,7 @@ export const Cards = (props) => {
   ];
 
   const pth = (
-    <FileViewer fileType="pdf" filePath="../../public/images/IfyCv.pdf" />
+    <FileViewer fileType="pdf" filePath="../../public/images/ifyVitae2021.pdf" />
   );
 
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
@@ -128,7 +128,7 @@ export const Cards = (props) => {
         justifyContent={matchesXS ? "center" : "flex-start"}
       >
         <Link
-          href={"/pdf/IfyCv.pdf"}
+          href={"/pdf/ifyVitae2021.pdf"}
           target="_blank"
           // class="butn butn-bg mt-30"
           download

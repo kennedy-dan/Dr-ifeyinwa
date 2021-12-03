@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   Container,
 } from "@material-ui/core";
-import profilePicture from "../public/images/mom.png";
+import profilePicture from "../public/images/nmom2.png";
 import bg from "../public/images/herobg2.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -94,8 +94,10 @@ const HeroBlock = (props) => {
         <Image
           src={profilePicture}
           alt="mrs Daniel image"
-          width={matchesMD ? 320 : matchesSM ? 220 : 350}
-          height={matchesMD ? 410 : matchesSM ? 310 : 430}
+          // width={matchesMD ? 420 : matchesSM ? 220 : 350}
+          // height={matchesMD ? 510 : matchesSM ? 310 : 430}
+          width={300}
+          height={480}
         />
       </Grid>
       <Grid item className={classes.detailGrid}>

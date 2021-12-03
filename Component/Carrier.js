@@ -88,7 +88,7 @@ const Carrier = (props) => {
            I have worked for various schools, Universities and colleges. Got
               my B.Sc from the University of Nigeria, Nsukka, my M.Sc and PhD
               from univerity of Lagos and Federal University of Agriculture
-              Abeokuta respectfully. Currently I work as an assistant lecturer
+              Abeokuta respectfully. Currently I work as an lecturer 1
               at Spiritan University Nneochi.
           </p>
         )}
