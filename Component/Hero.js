@@ -96,8 +96,8 @@ const HeroBlock = (props) => {
           alt="mrs Daniel image"
           // width={matchesMD ? 420 : matchesSM ? 220 : 350}
           // height={matchesMD ? 510 : matchesSM ? 310 : 430}
-          width={300}
-          height={480}
+          width={330}
+          height={390}
         />
       </Grid>
       <Grid item className={classes.detailGrid}>
