@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   Container,
 } from "@material-ui/core";
-import profilePicture from "../public/images/nmom2.png";
+import profilePicture from "../public/images/mom.png";
 import bg from "../public/images/herobg2.svg";
 
 const useStyles = makeStyles((theme) => ({
