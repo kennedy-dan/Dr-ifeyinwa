@@ -1,10 +1,10 @@
 import nc from "next-connect";
 import dbConnect from "../../../config/dbConnect";
 import {
-   deleteMessage
-} from "../../../controllers/messageController";
+    deletePdf
+} from "../../../controllers/pdfController";
 
-// import { isAuthenticatedUser, authorizeRoles } from "../../../middleware/auth";
+import { isAuthenticatedUser, authorizeRoles } from "../../../middleware/auth";
 
 
 import onError from "../../../middleware/error";
@@ -15,6 +15,6 @@ dbConnect();
 
 
 
-handler.use(isAuthenticatedUser).delete(deleteMessage)
+handler.use(isAuthenticatedUser).delete(deletePdf)
 
 export default handler;

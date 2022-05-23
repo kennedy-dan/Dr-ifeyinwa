@@ -3,6 +3,7 @@ import dbConnect from "../../../config/dbConnect";
 import {
   getSingleCourse, deleteCourse
 } from "../../../controllers/courseControllers";
+import { isAuthenticatedUser } from "../../../middleware/auth";
 
 // import { isAuthenticatedUser, authorizeRoles } from "../../../middleware/auth";
 
@@ -22,6 +23,6 @@ export const config = {
 
 
 handler.get(getSingleCourse);
-handler.delete(deleteCourse)
+handler.use(isAuthenticatedUser).delete(deleteCourse)
 
 export default handler;

@@ -102,7 +102,7 @@ const deleteCourse = catchAsyncErrors(async (req, res) => {
 
   res.status(200).json({
     success: true,
-    message: "Blog is deleted.",
+    message: "the course has been deleted.",
   });
 });
 

@@ -25,8 +25,13 @@ import {
 
 import { createMessageReducer, createMessagesReducer, getMessages, messageReducer } from '../reducers/messageReducers'
 
+import {createpdfReducer, getPdfs, deletePdfReducer} from '../reducers/pdfReducer'
+
 const reducer = combineReducers({
   message: messageReducer,
+  pdf: createpdfReducer,
+  Pdfs: getPdfs,
+  deletePdf: deletePdfReducer,
   cr: createMessagesReducer,
   messages:getMessages,
   auth:authReducer,
