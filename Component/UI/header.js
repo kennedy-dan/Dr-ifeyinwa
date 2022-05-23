@@ -161,7 +161,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   drawerList: {
-    fontSize: "17px",
+    fontSize: "14px",
     fontWeight: "50px",
     color: theme.palette.primary.main,
     textAlign: "center",
@@ -323,6 +323,11 @@ export default function Header() {
                         <p>My Messages</p>
                       </Link>
                     </MenuItem>
+                    <MenuItem>
+                      <Link href="/admin/pdfs">
+                        <p>Attached Files</p>
+                      </Link>
+                    </MenuItem>
                   </Select>
                   <Grid item container direction="column" xs>
                     <Avatar
@@ -393,7 +398,7 @@ export default function Header() {
             direction="row"
             justifyContent="center"
             align="center"
-            style={{ marginTop: "80px" }}
+            style={{ }}
           >
             <List disablePadding justify="center" alignItems="center">
               <ListItem
@@ -493,6 +498,16 @@ export default function Header() {
                               className={classes.drawerList}
                             >
                               My Messages{" "}
+                            </ListItemText>
+                          </Link>
+                        </ListItem>
+                        <ListItem button onClick={() => setOpendrawer(false)}>
+                          <Link href="/admin/pdfs">
+                            <ListItemText
+                              disableTypography
+                              className={classes.drawerList}
+                            >
+                              Attached Files{" "}
                             </ListItemText>
                           </Link>
                         </ListItem>
